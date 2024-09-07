@@ -4,6 +4,13 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Класс User представляет модель данных пользователя,
+ * отображает сущность пользователя на таблицу в базе данных.
+ * Содержит поля id, name, lastName и age, соответствующие колонкам таблицы.
+ * Используется для передачи данных между слоями приложения.
+ */
+
 @Table
 public class User {
     @Id
@@ -58,5 +65,15 @@ public class User {
 
     public void setAge(Byte age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
