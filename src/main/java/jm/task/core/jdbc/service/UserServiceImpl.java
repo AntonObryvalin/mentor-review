@@ -16,37 +16,32 @@ import java.util.List;
  */
 
 public class UserServiceImpl implements UserService {
-    private final UserDao userDao = new UserDaoJDBCImpl(); // Инициализируем объект класса UserDaoJDBCImpl
+    private final UserDao userDao = new UserDaoJDBCImpl();
 
-    // Метод для создания таблицы пользователей
+
     public void createUsersTable() {
-        userDao.createUsersTable(); // Вызываем метод из UserDaoJDBCImpl
+        userDao.createUsersTable();
     }
 
-    // Метод для удаления таблицы пользователей
     public void dropUsersTable() {
-        userDao.dropUsersTable(); // Вызываем метод из UserDaoJDBCImpl
+        userDao.dropUsersTable();
     }
 
-    // Метод для сохранения нового пользователя
     public void saveUser(String name, String lastName, byte age) {
-        userDao.saveUser(name, lastName, age); // Вызываем метод из UserDaoJDBCImpl
+        userDao.saveUser(name, lastName, age);
         System.out.println("User с именем – " + name + " добавлен в базу данных");
     }
 
-    // Метод для удаления пользователя по ID
     public void removeUserById(long id) {
-        userDao.removeUserById(id); // Вызываем метод из UserDaoJDBCImpl
+        userDao.removeUserById(id);
     }
 
-    // Метод для получения всех пользователей
     public List<User> getAllUsers() {
-        return userDao.getAllUsers(); // Вызываем метод из UserDaoJDBCImpl
+        return userDao.getAllUsers();
     }
 
-    // Метод для очистки таблицы пользователей
     public void cleanUsersTable() {
-        userDao.cleanUsersTable(); // Вызываем метод из UserDaoJDBCImpl
+        userDao.cleanUsersTable();
     }
 
 }
