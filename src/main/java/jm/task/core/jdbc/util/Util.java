@@ -1,4 +1,3 @@
-
 package jm.task.core.jdbc.util;
 
 import java.sql.Connection;
@@ -21,26 +20,5 @@ public class Util {
             e.printStackTrace();
         }
         return connection;
-    }
-
-    public static void main(String[] args) {
-
-        Connection connection = createConnection();
-        if (connection != null) {
-            try {
-                if (!connection.isClosed()) {
-                    System.out.println("Соединение с БД активное");
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    connection.close();
-                    System.out.println("Соединение закрыто");
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
     }
 }
