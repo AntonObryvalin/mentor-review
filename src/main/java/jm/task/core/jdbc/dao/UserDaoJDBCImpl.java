@@ -83,7 +83,7 @@ public class UserDaoJDBCImpl implements UserDao {
         String deleteSQL = "DELETE FROM firstlib.users WHERE id = ?";
         try (Connection connection = Util.createConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(deleteSQL)) {
-            connection.setAutoCommit(false); // Начало транзакции
+            connection.setAutoCommit(false); // Начало транзакции.
 
             preparedStatement.setLong(1, id);
             int rowsAffected = preparedStatement.executeUpdate();
