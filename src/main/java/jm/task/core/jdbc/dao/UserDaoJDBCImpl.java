@@ -72,7 +72,7 @@ public class UserDaoJDBCImpl implements UserDao {
             System.out.println("Ошибка при добавлении пользователя в базу.");
             e.printStackTrace();
             try (Connection connection = Util.createConnection()) {
-                connection.rollback(); // Откат транзакции при ошибке
+                connection.rollback(); // Откат транзакции при ошибке.
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
